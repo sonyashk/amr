@@ -1,0 +1,26 @@
+public class DigitsExtractor {
+    public static void main(String[] args) {
+        String input = "I have 3 cats, 4 dogs, and 1 turtle";
+        StringBuilder digits = new StringBuilder();
+
+        // Проходим по каждому символу строки
+        for (int i = 0; i < input.length(); i++) {
+            char c = input.charAt(i);
+            // Проверяем, является ли символ цифрой
+            if (Character.isDigit(c)) {
+                digits.append(c);
+            }
+        }
+
+        // Преобразуем собранные символы в массив int
+        int[] array = new int[digits.length()];
+        for (int i = 0; i < digits.length(); i++) {
+            array[i] = digits.charAt(i) - '0'; // '3' -> 3
+        }
+
+        // Выводим массив на консоль
+        for (int num : array) {
+            System.out.print(num + " ");
+        }
+    }
+}
