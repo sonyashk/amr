@@ -1,0 +1,68 @@
+import java.sql.*;
+import java.util.Scanner;
+
+public class MathOperationsMenu {
+    private static final String URL = "jdbc:mysql://localhost:3306/mydatabase";
+    private static final String USER = "root";
+    private static final String PASSWORD = "root";
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int choice;
+        do {
+            System.out.println("Выберите пункт меню:");
+            System.out.println("1. Вывести все таблицы из MySQL");
+            System.out.println("2. Создать таблицу в MySQL");
+            System.out.println("3. Сложение чисел...");
+            System.out.println("4. Вычитание чисел...");
+            System.out.println("5. Умножение чисел...");
+            System.out.println("6. Деление чисел...");
+            System.out.println("7. Деление чисел по модулю (остаток)...");
+            System.out.println("8. Модуль числа...");
+            System.out.println("9. Возведение числа в степень...");
+            System.out.println("10. Сохранить все данные в Excel (и вывести)...");
+            System.out.println("0. Выход.");
+
+            choice = sc.nextInt();
+
+            switch (choice) {
+                case 1:
+                    printAllTables();
+                    break;
+                case 2:
+                    createTableInMySQL();
+                    break;
+                case 3:
+                    additionOperation();
+                    break;
+                case 4:
+                    subtractionOperation();
+                    break;
+                case 5:
+                    multiplicationOperation();
+                    break;
+                case 6:
+                    divisionOperation();
+                    break;
+                case 7:
+                    moduloOperation();
+                    break;
+                case 8:
+                    absOperation();
+                    break;
+                case 9:
+                    powOperation();
+                    break;
+                case 10:
+                    exportToExcel();
+                    break;
+                case 0:
+                    System.out.println("Выход из программы...");
+                    break;
+                default:
+                    System.out.println("Неверный пункт меню.");
+            }
+        } while (choice != 0);
+
+        sc.close();
+    }
