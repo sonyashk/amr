@@ -1,0 +1,21 @@
+import java.util.Scanner;
+public class Task3 {
+	public static void main(String[] args) {
+    	Scanner scanner = new Scanner(System.in);
+    	System.out.print("Введите натуральное число: ");
+    	int n = scanner.nextInt();
+    	// Проверяем, является ли число натуральным
+    	if (n <= 0) {
+        	System.out.println("Введите положительное натуральное число.");
+        	return;
+    	}
+    	// Преобразуем число в строку, чтобы обрабатывать цифры слева направо
+    	String numberStr = Integer.toString(n);
+    	System.out.println("Цифры числа " + n + ":");
+    	for (char digitChar : numberStr.toCharArray()) {
+        	// Каждая цифра выводится отдельно
+        	System.out.println(digitChar);
+    	}
+	}
+}
+ 
